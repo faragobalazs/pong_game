@@ -1,8 +1,7 @@
 #Imports
 from turtle import Turtle
 
-# Constants
-SPEED = 10
+
 
 # Class
 class Ball(Turtle):
@@ -11,9 +10,24 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
+        self.x_move = 10
+        self.y_move = 10
 
-    # Movement
+    # Movement Method
     def move(self):
-        new_x = self.xcor() + SPEED
-        new_y = self.ycor() + SPEED
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
         self.goto(new_x, new_y)
+
+    # Bouncing Method
+    def bounce(self):
+        self.y_move *= -1
+
+    # Track Movement Methods
+    def pos_x(self):
+        x = self.xcor()
+        return x
+    
+    def pos_y(self):
+        y = self.ycor()
+        return y

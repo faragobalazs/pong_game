@@ -16,7 +16,7 @@ class Paddle(Turtle):
         self.penup()
 
 
-    # Function - Moving Paddle
+    # Moving Paddle Method
     def move_up(self):
         new_y = self.ycor() + MOVE_DISTANCE
         self.goto(self.xcor(), new_y)
@@ -24,4 +24,3 @@ class Paddle(Turtle):
     def move_down(self):
         new_y = self.ycor() - MOVE_DISTANCE
         self.goto(self.xcor(), new_y)
-    
