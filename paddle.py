@@ -1,11 +1,12 @@
+#Imports
 from turtle import Turtle
 
 # Constants
-
 PADDLE_WIDTH_STRETCH = 5
 PADDLE_LENGTH_SCRETCH = 1
 MOVE_DISTANCE = 20
 
+# Class
 class Paddle(Turtle):
     def __init__(self):
         super().__init__()
@@ -15,7 +16,7 @@ class Paddle(Turtle):
         self.penup()
 
 
-    # Moving Paddle
+    # Function - Moving Paddle
     def move_up(self):
         new_y = self.ycor() + MOVE_DISTANCE
         self.goto(self.xcor(), new_y)
