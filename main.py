@@ -14,33 +14,37 @@ screen.title("Pong")
 screen.tracer(0) # turn off animation
 
 # Objects
-paddle_right = Paddle()
-paddle_left = Paddle()
+r_paddle = Paddle()
+l_paddle = Paddle()
 ball = Ball()
 
 # Original Positions
-paddle_right.goto(350, 0)
-paddle_left.goto(-350,0)
+r_paddle.goto(350, 0)
+l_paddle.goto(-350,0)
 ball.goto(0,0)
 
 # Paddle Control
 screen.listen()
-screen.onkey(paddle_right.move_up, "Up")
-screen.onkey(paddle_right.move_down, "Down")
-screen.onkey(paddle_left.move_up, "w")
-screen.onkey(paddle_left.move_down, "s")
+screen.onkeypress(r_paddle.move_up, "o")
+screen.onkeypress(r_paddle.move_down, "l")
+screen.onkeypress(l_paddle.move_up, "w")
+screen.onkeypress(l_paddle.move_down, "s")
 
 # Screen Setup
 game_is_on = True
 while game_is_on:
-  time.sleep(0.09)
+  time.sleep(0.1)
   screen.update()
   ball.move()
 
   # Detect Collision with Wall
 
   if ball.ycor() > 280 or ball.ycor() < -280:
-    ball.bounce()
+    ball.bounce_y()
+
+  # Detect Collision with Right Paddle
+  if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
+    ball.bounce_x()
 
 
-screen.exitonclick()
+screen.exitonclick() 

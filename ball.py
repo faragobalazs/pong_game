@@ -20,8 +20,11 @@ class Ball(Turtle):
         self.goto(new_x, new_y)
 
     # Bouncing Method
-    def bounce(self):
+    def bounce_y(self):
         self.y_move *= -1
+
+    def bounce_x(self):
+        self.x_move *= -1
 
     # Track Movement Methods
     def pos_x(self):
@@ -30,4 +33,4 @@ class Ball(Turtle):
     
     def pos_y(self):
         y = self.ycor()
-        return y
+        return y 
