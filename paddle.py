@@ -15,7 +15,6 @@ class Paddle(Turtle):
         self.shapesize(stretch_wid=PADDLE_WIDTH_STRETCH, stretch_len=PADDLE_LENGTH_SCRETCH)
         self.penup()
 
-
     # Moving Paddle Method
     def move_up(self):
         new_y = self.ycor() + MOVE_DISTANCE
