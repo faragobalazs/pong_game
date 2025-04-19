@@ -34,3 +34,8 @@ class Ball(Turtle):
     def pos_y(self):
         y = self.ycor()
         return y 
+    
+    # Reset to Original Position
+    def reset(self):
+        self.goto(0, 0)
+        self.bounce_x()
